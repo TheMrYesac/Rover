@@ -7,15 +7,17 @@
 # different features over the weekend and came up with this routine
 
 import time
+import sys
+import os
 from datetime import datetime
 
 # Import classes
-from motor import Ordinary_Car
-from ultrasonic import Ultrasonic
-from led import Led
-from buzzer import Buzzer
-from infrared import Infrared
-from camera import Camera
+from rover_modules.motor import Ordinary_Car
+from rover_modules.ultrasonic import Ultrasonic
+from rover_modules.led import Led
+from rover_modules.buzzer import Buzzer
+from rover_modules.infrared import Infrared
+from rover_modules.camera import Camera
 
 # Main class that manages the rover's actions
 class Rover:
