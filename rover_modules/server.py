@@ -1,7 +1,7 @@
 import socket  # Import the socket module for network communication
 import fcntl   # Import the fcntl module for I/O control
 import struct  # Import the struct module for packing and unpacking data
-from tcp_server import TCPServer  # Import the TCPServer class from the tcp_server module
+from .tcp_server import TCPServer  # Import the TCPServer class from the tcp_server module
 
 class Server:
     def __init__(self):

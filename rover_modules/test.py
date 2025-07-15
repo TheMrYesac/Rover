@@ -1,6 +1,6 @@
 def test_Led():
     import time
-    from led import Led
+    from .led import Led
     led=Led()
     try:
         led.ledIndex(0x01, 255,   0,   0)      #Red
