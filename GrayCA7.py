@@ -46,7 +46,7 @@ class Rover:
         self.cam = Camera(hflip=True, vflip=True)
         
         # Set distance (in centimeters) at which an obstacle is detected
-        self.obstacle_distance = 30
+        self.obstacle_distance = 40
         
         # Set a distance threshold (in centimeters) to determine if the rover is clear to move forward after turning
         self.clear_path = 50
@@ -56,6 +56,9 @@ class Rover:
         
         # Define motor speed for turning
         self.turn_speed = 1000
+        
+        # Define time it takes to turn 90 degrees
+        self.turn_90_degrees = 0.3
         
         # Set expected infrared sensor value when the rover is on the cardboard box
         # Gotten by setting rover on box and reading sensor value
@@ -198,18 +201,25 @@ class Rover:
         self.led.colorBlink(state=1)
         
         # Avoidance sequence
-        # Step 1: Turn right until path is clear
-        self.turn_right()
+        # Step 1: Turn right 90 degrees
+        self.car.set_motor_model(self.turn_speed, self.turn_speed, -self.turn_speed, -self.turn_speed)
+        time.sleep(self.turn_90_degrees)
+        self.stop_rover()
+        time.sleep(0.2)
         
-        # Step 2: Move forward for a set duration
+        # Step 2: Move forward to clear the obstacle
         self.move_forward()
         time.sleep(1.5)
         self.stop_rover()
+        time.sleep(0.2)
         
-        # Step 3: Turn left until a clear path is detected
-        self.turn_left()
+        # Step 3: Turn left 90 degrees
+        self.car.set_motor_model(-self.turn_speed, -self.turn_speed, self.turn_speed, self.turn_speed)
+        time.sleep(self.turn_90_degrees)
+        self.stop_rover()
+        time.sleep(0.2)
         
-        # Step 4: Move forward to ensure obstacle is avoided
+        # Step 4: Move forward to return to original path
         self.move_forward()
         time.sleep(0.5)
         self.stop_rover()
