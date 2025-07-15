@@ -57,7 +57,7 @@ class Rover:
         
         # Set expected infrared sensor value when the rover is on the cardboard box
         # Gotten by setting rover on box and reading sensor value
-        self.box_ir_value = 0b111
+        self.box_ir_value = 7
         
         # Initialize variable for storing video file
         self.video_filename = None
