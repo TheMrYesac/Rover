@@ -55,7 +55,7 @@ class Rover:
         self.forward_speed = 1000
         
         # Define motor speed for turning
-        self.turn_speed = 1000
+        self.turn_speed = 2000
         
         # Define time it takes to turn 90 degrees
         self.turn_90_degrees = 0.3
