@@ -43,7 +43,7 @@ class Rover:
         self.infrared = Infrared()
         
         # Create an instance of the camera class that flips horizontally/vertically as needed
-        self.cam = Camera(hflip=True, vflip=False)
+        self.cam = Camera(hflip=False, vflip=False)
         
         # Set distance (in centimeters) at which an obstacle is detected
         self.obstacle_distance = 40
