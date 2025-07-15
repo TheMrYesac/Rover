@@ -241,7 +241,7 @@ class Rover:
             
             # Generate video filename using current date/time
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            self.video_filename = f"rover_run_{timestamp}.mp4"
+            self.video_filename = f"rover_run_{timestamp}.h264"
             
             # Print message stating that a video is being recorded
             print(f"Starting video recording to {self.video_filename}...")
