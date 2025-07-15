@@ -58,7 +58,7 @@ class Rover:
         self.turn_speed = 2000
         
         # Define time it takes to turn 90 degrees
-        self.turn_90_degrees = 0.3
+        self.turn_90_degrees = 1.2
         
         # Set expected infrared sensor value when the rover is on the cardboard box
         # Gotten by setting rover on box and reading sensor value
