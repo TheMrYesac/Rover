@@ -31,7 +31,7 @@ class Rover:
         self.car = Ordinary_Car()
         
         # Create an instance of the ultrasonic sensor setting its max distance
-        self.ultrasonic = Ultrasonic(max_distance=3.0)
+        self.ultrasonic = Ultrasonic(max_distance=60.0)
         
         # Create an instance of the led class for LED control
         self.led = Led()
@@ -52,10 +52,10 @@ class Rover:
         self.clear_path = 50
         
         # Define motor speed for moving forward
-        self.forward_speed = 2000
+        self.forward_speed = 1000
         
         # Define motor speed for turning
-        self.turn_speed = 2000
+        self.turn_speed = 1000
         
         # Set expected infrared sensor value when the rover is on the cardboard box
         # Gotten by setting rover on box and reading sensor value
